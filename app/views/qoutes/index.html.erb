@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Qoutes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Qoute</th>
+      <th>Background</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qoutes.each do |qoute| %>
+      <tr>
+        <td><%= qoute.author %></td>
+        <td><%= qoute.qoute %></td>
+        <td><%= qoute.background %></td>
+        <td><%= link_to 'Show', qoute %></td>
+        <td><%= link_to 'Edit', edit_qoute_path(qoute) %></td>
+        <td><%= link_to 'Destroy', qoute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qoute', new_qoute_path %>
